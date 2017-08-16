@@ -1,0 +1,8 @@
+extends ../layout
+
+block main
+    h1 Добро пожаловать!
+    form(method='post', action='/select')
+      input(name='date', type='date')
+      input(name='submit', type='submit')
+      
