@@ -2,8 +2,8 @@
 var bodyParser = require('body-parser');
 var multer = require('multer');
 var http = require('http')
-, express = require('express')
-, stylus = require('stylus');
+, express = require('express');
+// , stylus = require('stylus');
 
 var app = module.exports = express();
 
@@ -19,7 +19,7 @@ app.set('view engine', 'jade');
 // app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(__dirname + '/public'));
-app.use(stylus.middleware({
-  src: __dirname + '/public',
-  compress: true
-}));
+// app.use(stylus.middleware({
+//   src: __dirname + '/public',
+//   compress: true
+// }));
