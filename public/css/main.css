@@ -1,1 +1,146 @@
-html,body{padding:58;margin:0;font:16px PT Sans,Verdana,Arial,sans-serif}header,aside,article,footer{padding:8px}header,aside,footer{text-align:center}
+@font-face {
+  font-family: PoiretOne;
+  src: url(/fonts/PoiretOne-Regular.ttf);
+ }
+body {
+}
+html {
+  background:
+    -webkit-linear-gradient(45deg, hsla(259, 89%, 42%, 1) 0%, hsla(259, 89%, 42%, 0) 70%),
+    -webkit-linear-gradient(315deg, hsla(173, 99%, 46%, 1) 10%, hsla(173, 99%, 46%, 0) 80%),
+    -webkit-linear-gradient(225deg, hsla(234, 94%, 43%, 1) 10%, hsla(234, 94%, 43%, 0) 80%),
+    -webkit-linear-gradient(135deg, hsla(9, 97%, 44%, 1) 100%, hsla(9, 97%, 44%, 0) 70%);
+  background-attachment: scroll;
+  font-family: PoiretOne;
+  color: white;
+  height: 100%;
+}
+header,aside,article,footer {
+  padding:10px;
+  text-align:center
+}
+footer {
+  /*position: absolute;
+  bottom: 25px;*/
+}
+article {
+  /*background-image: url(/img/texture.jpg);*/
+}
+.plan {
+  height:320px;
+  width: 600px;
+  border-radius: 10px;
+  position: relative;
+  margin: auto;
+  background-image: url(/img/pub.jpg);
+  /*border-width: 5px;
+  border-style: dashed;
+  border-color: black;*/
+  border: 6px inset #7362DF;
+}
+.horizontal {
+  display: block;
+  height:160px;
+  /*background-color: rgba(0, 111, 0, 0.3);*/
+}
+.vertical {
+  display: inline-block;
+  position: relative;
+  height:160px;
+  width:140px;
+  /*background-color: rgba(0, 111, 0, 0.3);*/
+  border-radius: 20px;
+}
+.free {
+  display: block;
+  margin: 0 auto;
+  width:80px;
+  height:40px;
+  position: absolute;
+  right: 15px;
+  left: 15px;
+  top: 60px;
+  bottom: 15px;
+  border-radius: 10px;
+  background-color: rgba(0, 255, 0, 0.5);
+}
+.reserved {
+  display: block;
+  margin: 0 auto;
+  position: absolute;
+  right: 15px;
+  left: 15px;
+  top: 60px;
+  bottom: 15px;
+  width:80px;
+  height:40px;
+  border-radius: 10px;
+  background-color: rgba(255, 0, 0, 0.5);
+}
+
+
+.button {
+  color: white;
+  position: relative;
+  display: inline-block;
+  font-family: PoiretOne;
+  font-size: 120%;
+  font-weight: 800;
+  text-shadow: #053852 -1px 1px, #053852 1px 1px, #053852 1px -1px, #053852 -1px -1px;
+  text-decoration: none;
+  user-select: none;
+  padding: .3em .7em;
+  outline: none;
+  border-radius: 7px;
+  background: #7362DF repeating-linear-gradient(135deg, #053852, #053852 10px, #1679ad 10px, #1679ad 20px, #053852 20px);
+  box-shadow:
+   inset -2px -2px rgba(0,0,0,.3),
+   inset 2px 2px rgba(255,255,255,.3);
+  /*transition: background-position 999999s, color 999999s, text-shadow 999999s;*/
+}
+.button:hover, .button:focus {
+  color: white;
+  text-shadow: #0175b1 -1px 1px, #0175b1 1px 1px, #0175b1 1px -1px, #0175b1 -1px -1px;
+  background: #0175b1 repeating-linear-gradient(135deg, #0175b1, #0175b1 10px, #8fd2f5 10px, #8fd2f5 20px, #0175b1 20px) no-repeat;
+  background-size: 1000% 100%;
+}
+.button:hover {
+  color: white;
+  background-position: 0 0;
+}
+.button:focus {
+  /*color: rgba(255,255,255,0);*/
+  color: white;
+  text-shadow: rgba(1,117,177,0) -1px 1px, rgba(1,117,177,0) 1px 1px, rgba(1,117,177,0) 1px -1px, rgba(1,117,177,0) -1px -1px;
+  background-position: 900% 0;
+  transition: background-position linear 600s, color .5s, text-shadow .5s;
+}
+.button:after {
+  content: "загрузка\2026";
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: .3em .7em;
+  color: rgba(0,0,0,0);
+  text-shadow: none;
+  transition: 999999s;
+}
+.button:focus:after {
+  color: #fff;
+  text-shadow: #0175b1 -1px 1px, #0175b1 1px 1px, #0175b1 1px -1px, #0175b1 -1px -1px;
+  transition: .5s;
+}
+
+/* Базовый стиль формы */
+/* Поле сообщения */
+/* Поля ввода */
+  input {
+      border: 3px white;
+      font-family: PoiretOne;
+      font-weight: 500;
+      border-radius: 4px;
+      font-size:22px;
+      padding-left:100px;
+      padding-right:0px;
+      margin-bottom:25px;
+    }

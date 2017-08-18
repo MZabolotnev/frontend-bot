@@ -43,9 +43,9 @@ app.get('/', function(req, res) {
   res.render('pages/index');
 });
 
-app.get('/booking', function(req, res, next) {
-  res.render('pages/booking',{tables: 'many'});
-});
+// app.get('/booking', function(req, res, next) {
+//   res.render('pages/booking',{tables: 'many'});
+// });
 
 app.post('/select', function(req, res) {
   var date = req.body.date + 'T00:00:00.000Z';

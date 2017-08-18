@@ -1,15 +1,49 @@
 extends ../layout
 
 block main
+  h1 Долго не думай, у нас их быстро разбирают :)
+  div.plan
+    div.horizontal
+      div.vertical
+        - if (tab[0].booking == 'free')
+          div#table1.free Стол №#{tab[0].id}  #{tab[0].booking}
+        - else
+          div#table1.reserved Стол №#{tab[0].id}  #{tab[0].booking}
+      div.vertical
+        - if (tab[2].booking == 'free')
+          div#table3.free Стол №#{tab[2].id}  #{tab[2].booking}
+        - else
+          div#table3.reserved Стол №#{tab[2].id}  #{tab[2].booking}
+      div.vertical
+        - if (tab[4].booking == 'free')
+          div#table5.free Стол №#{tab[4].id}  #{tab[4].booking}
+        - else
+          div#table5.reserved Стол №#{tab[4].id}  #{tab[4].booking}
+      div.vertical
+        - if (tab[6].booking == 'free')
+          div#table7.free Стол №#{tab[6].id}  #{tab[6].booking}
+        - else
+          div#table7.reserved Стол №#{tab[6].id}  #{tab[6].booking}
+    div.horizontal
+      div.vertical
+        - if (tab[1].booking == 'free')
+          div#table2.free Стол №#{tab[1].id}  #{tab[1].booking}
+        - else
+          div#table2.reserved Стол №#{tab[1].id}  #{tab[1].booking}
+      div.vertical
+        - if (tab[3].booking == 'free')
+          div#table4.free Стол №#{tab[3].id}  #{tab[3].booking}
+        - else
+          div#table4.reserved Стол №#{tab[3].id}  #{tab[3].booking}
+      div.vertical
+        - if (tab[5].booking == 'free')
+          div#table6.free Стол №#{tab[5].id}  #{tab[5].booking}
+        - else
+          div#table6.reserved Стол №#{tab[5].id}  #{tab[5].booking}
+      div.vertical
+        - if (tab[7].booking == 'free')
+          div#table8.free Стол №#{tab[7].id}  #{tab[7].booking}
+        - else
+          div#table8.reserved Стол №#{tab[7].id}  #{tab[7].booking}
 
-    div#1 Стол №#{tab[0].id}  #{tab[0].booking}
-    div#2 Стол №#{tab[1].id}  #{tab[1].booking}
-    div#3 Стол №#{tab[2].id}  #{tab[2].booking}
-    div#4 Стол №#{tab[3].id}  #{tab[3].booking}
-    div#5 Стол №#{tab[4].id}  #{tab[4].booking}
-    div#6 Стол №#{tab[5].id}  #{tab[5].booking}
-    div#7 Стол №#{tab[6].id}  #{tab[6].booking}
-    div#8 Стол №#{tab[7].id}  #{tab[7].booking}
-
-
-    button( onclick="history.back()") Вернуться к выбору даты
+  button.button( onclick="history.back()") Вернуться к выбору даты
