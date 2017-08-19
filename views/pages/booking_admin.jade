@@ -1,0 +1,38 @@
+extends ../layout
+
+block main
+    h1 Ну если ты админ, то смотри суперсекретную информацию, кем заняты столы :
+    div.list
+      - if (tab[0].booking == 'free')
+        div.free_admin Стол №#{tab[0].id}  #{tab[0].booking}
+      - else
+        div.reserved_admin Стол №#{tab[0].id}  #{tab[0].booking} by #{tab[0].first_name}  #{tab[0].last_name}
+      - if (tab[1].booking == 'free')
+        div.free_admin Стол №#{tab[1].id}  #{tab[1].booking}
+      - else
+        div.reserved_admin Стол №#{tab[1].id}  #{tab[1].booking} by #{tab[1].first_name}  #{tab[1].last_name}
+      - if (tab[2].booking == 'free')
+        div.free_admin Стол №#{tab[2].id}  #{tab[2].booking}
+      - else
+        div.reserved_admin Стол №#{tab[2].id}  #{tab[2].booking} by #{tab[2].first_name}  #{tab[2].last_name}
+      - if (tab[3].booking == 'free')
+        div.free_admin Стол №#{tab[3].id}  #{tab[3].booking}
+      - else
+        div.reserved_admin Стол №#{tab[3].id}  #{tab[3].booking} by #{tab[3].first_name}  #{tab[3].last_name}
+      - if (tab[4].booking == 'free')
+        div.free_admin Стол №#{tab[4].id}  #{tab[4].booking}
+      - else
+        div.reserved_admin Стол №#{tab[4].id}  #{tab[4].booking} by #{tab[4].first_name}  #{tab[4].last_name}
+      - if (tab[5].booking == 'free')
+        div.free_admin Стол №#{tab[5].id}  #{tab[5].booking}
+      - else
+        div.reserved_admin Стол №#{tab[5].id}  #{tab[5].booking} by #{tab[5].first_name}  #{tab[5].last_name}
+      - if (tab[6].booking == 'free')
+        div.free_admin Стол №#{tab[6].id}  #{tab[6].booking}
+      - else
+        div.reserved_admin Стол №#{tab[6].id}  #{tab[6].booking} by #{tab[6].first_name}  #{tab[6].last_name}
+      - if (tab[7].booking == 'free')
+        div.free_admin Стол №#{tab[7].id}  #{tab[7].booking}
+      - else
+        div.reserved_admin Стол №#{tab[7].id}  #{tab[7].booking} by #{tab[7].first_name}  #{tab[7].last_name}
+      button.button( onclick="history.back()") Вернуться к выбору даты

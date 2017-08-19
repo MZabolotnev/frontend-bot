@@ -1,0 +1,7 @@
+extends ../layout
+
+block main
+    h2 Давай выберем дату (для админов) :
+    form(method='post', action='/select_admin')
+      input(name='date', type='date', value='2017-08-19' min='2017-08-19' required)
+      input(name='submit', type='submit', class='button')

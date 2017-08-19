@@ -130,17 +130,59 @@ article {
   text-shadow: #0175b1 -1px 1px, #0175b1 1px 1px, #0175b1 1px -1px, #0175b1 -1px -1px;
   transition: .5s;
 }
+admin {
+  position:absolute;
+  top: 15px;
+  right: 15px;
+}
+form.admin {
+  display: block;
+  top: 15px;
+}
+input.admin {
+    display: block;
+    border: 3px white;
+    font-family: PoiretOne;
+    font-weight: 500;
+    border-radius: 4px;
+    font-size:22px;
+    padding-left:100px;
+    padding-right:0px;
+    margin-bottom:25px;
+  }
+input {
+    border: 3px white;
+    font-family: PoiretOne;
+    font-weight: 500;
+    border-radius: 4px;
+    font-size:22px;
+    padding-left:100px;
+    padding-right:0px;
+    margin-bottom:25px;
+  }
+.list {
+  margin: auto;
+  display: inline-table;
 
-/* Базовый стиль формы */
-/* Поле сообщения */
-/* Поля ввода */
-  input {
-      border: 3px white;
-      font-family: PoiretOne;
-      font-weight: 500;
-      border-radius: 4px;
-      font-size:22px;
-      padding-left:100px;
-      padding-right:0px;
-      margin-bottom:25px;
-    }
+}
+
+.reserved_admin {
+  margin: 10px;
+  font-size: 130%;
+  font-weight: 600;
+  background-color: #C71585;
+  border-style:solid;
+  border-radius: 5px;
+  border-width: 1px;
+  border-color: white;
+}
+
+.free_admin {
+  margin: 10px;
+  font-size: 150%;
+  background-color: #20B2AA;
+  border-style:solid;
+  border-radius: 5px;
+  border-width: 1px;
+  border-color: white;
+}

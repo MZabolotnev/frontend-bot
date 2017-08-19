@@ -6,7 +6,17 @@ html
   body
     header
       img(src='img/logo.png')
-      h1 Привет! Показать столики? 
+      h1 Привет! Показать столики?
+    admin
+      - if (authenticate == true)
+        h2 Привет, Админ!
+        a.button(href="/") Выход
+      - else
+        h2 Если ты админ, залогинься :
+        form.admin(method='post', action='/admin')
+          input.admin(name='login', type='text', required)
+          input.admin(name='password', type='text', required)
+          input(name='submit', type='submit', class='button')
     article
       block main
     footer
