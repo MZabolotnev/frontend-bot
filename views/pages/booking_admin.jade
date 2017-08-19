@@ -1,0 +1,13 @@
+extends ../layout
+
+block main
+    h1 Ну если ты админ, то смотри суперсекретную информацию, кем заняты столы :
+    div.list
+      - for (var i in tab)
+        - if (tab[i].booking == 'free')
+          div.free_admin Стол №#{tab[i].id}  #{tab[i].booking}
+        - else
+          div.reserved_admin Стол №#{tab[i].id}  #{tab[i].booking} by #{tab[i].first_name}  #{tab[i].last_name}
+          form
+            button(formaction='/booking/remove/#{tab[i].id}', class='button', formmethod='post') Отменить бронь
+      button.button( onclick="history.back()") Вернуться к выбору даты
