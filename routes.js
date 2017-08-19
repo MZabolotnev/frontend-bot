@@ -58,6 +58,7 @@ const Admin = sequelize.define('admin', {
 //     password: 'admin'
 //   });
 // });
+var global_date;
 
 var app = require('./app');
 
@@ -67,13 +68,28 @@ app.get('/', function(req, res) {
   res.render('pages/index');
 });
 
+app.get('/book-del', function(req, res) {
+  res.render('pages/book-del');
+});
+
 app.get('/*', function(req, res) {
   res.render('pages/error');
 });
 
-// app.get('/booking', function(req, res, next) {
-//   res.render('pages/booking',{tables: 'many'});
-// });
+
+
+app.post('/booking/remove/:id', function(req, res) {
+  console.log(req.params)
+  Reservation.destroy({
+    where: {
+      table_id: req.params.id,
+      date: global_date
+      }
+    }).then
+  res.redirect('/book-del');
+
+});
+
 
 var exit = function() {
   app.get('/', function(req, res) {
@@ -83,7 +99,6 @@ var exit = function() {
   }
 
 app.post('/admin', function(req, res) {
-  console.log('передача админской формы', req.body)
   var login = req.body.login;
   var password = req.body.password;
   Admin.findAll({
@@ -92,7 +107,6 @@ app.post('/admin', function(req, res) {
             password: password
             }
           }).then(admin => {
-            console.log('ответ базы', admin.length)
             if (admin.length !== 0) {
               is_autorize = true;
               res.render('pages/admin_index', {authenticate: is_autorize});
@@ -139,12 +153,12 @@ app.post('/select', function(req, res) {
 
 app.post('/select_admin', function(req, res) {
   var date = req.body.date + 'T00:00:00.000Z';
+  global_date = date;
   Reservation.findAll({
           where: {
             date: date
             }
           }).then(reservation => {
-            console.log('base response', reservation);
             var tables = [
               {id: '1', booking: 'free', first_name: '', last_name: ''},
               {id: '2', booking: 'free', first_name: '', last_name: ''},
@@ -158,7 +172,6 @@ app.post('/select_admin', function(req, res) {
             var reserved_tables = [];
             for (var i = 0; i < reservation.length; i++) {
               reserved_tables.push(reservation[i].dataValues)
-              console.log('values push', reservation[i].dataValues)
             };
             for (var i = 0; i < tables.length; i++) {
               for (var j = 0; j < reserved_tables.length; j++) {
@@ -169,7 +182,6 @@ app.post('/select_admin', function(req, res) {
                 }
               }
             };
-            console.log(tables);
             res.render('pages/booking_admin',{tab: tables, authenticate: is_autorize})
           })
 
